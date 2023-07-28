@@ -57,4 +57,4 @@ The files in this project are:
   - Stop my_process when running stop action
   - Manage my_process across multiple servers using Fabric (upstart)
   - Display logs in real time when running logs action
-- [102-zombie.c]: A C program that creates 5 zombie processes.
+- [102-zombie.c](https://github.com/ahmedmkamal313/alx-system_engineering-devops/blob/master/0x05-processes_and_signals/102-zombie.c): A C program that creates 5 zombie processes.
