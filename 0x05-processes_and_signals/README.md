@@ -33,12 +33,12 @@ The files in this project are:
 - [3-show_your_bash_pid_made_easy](https://github.com/ahmedmkamal313/alx-system_engineering-devops/blob/master/0x05-processes_and_signals/3-show_your_bash_pid_made_easy): A script that displays the PID and process name of processes whose name contain the word `bash`.
 - [4-to_infinity_and_beyond](https://github.com/ahmedmkamal313/alx-system_engineering-devops/blob/master/0x05-processes_and_signals/4-to_infinity_and_beyond): A script that displays `To infinity and beyond` indefinitely.
 - [5-dont_stop_me_now](https://github.com/ahmedmkamal313/alx-system_engineering-devops/blob/master/0x05-processes_and_signals/5-dont_stop_me_now): A script that stops `4-to_infinity_and_beyond` process.
-- [6-stop_me_if_you_can]: A script that stops `4-to_infinity_and_beyond` process without using `kill` or `killall`.
-- [7-highlander]: A script that displays:
+- [6-stop_me_if_you_can](https://github.com/ahmedmkamal313/alx-system_engineering-devops/blob/master/0x05-processes_and_signals/ 6-stop_me_if_you_can):A script that stops `4-to_infinity_and_beyond` process without using `kill` or `killall`.
+- [7-highlander](https://github.com/ahmedmkamal313/alx-system_engineering-devops/blob/master/0x05-processes_and_signals/7-highlander): A script that displays:
   - `To infinity` and beyond indefinitely
   - With a `sleep 2` in between each iteration
   - `I am invincible!!!` when receiving a SIGTERM signal
-- [8-beheaded_process]: A script that kills the process `7-highlander`.
+- [8-beheaded_process](https://github.com/ahmedmkamal313/alx-system_engineering-devops/blob/master/0x05-processes_and_signals/8-beheaded_process): A script that kills the process `7-highlander`.
 - [100-process_and_pid_file]: A script that:
   - Creates the file `/var/run/holbertonscript.pid` containing its PID
   - Displays `To infinity and beyond` indefinitely
