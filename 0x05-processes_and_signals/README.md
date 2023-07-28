@@ -1,5 +1,5 @@
-# 0x05. Processes and signals
-This project is about learning how to manage processes and signals in Linux using Bash scripting.
+# 0x05. Processes and signals :sparkles:
+This project is about learning how to manage processes and signals in Linux using Bash scripting 🐚.
 
 - Use man or help to learn more about:
 `ps`
@@ -9,7 +9,7 @@ This project is about learning how to manage processes and signals in Linux usin
 `exit`
 `trap`
 
-## General
+## :bulb: General 
 - What is a PID
 - What is a process
 - How to find a process’ PID
@@ -17,14 +17,14 @@ This project is about learning how to manage processes and signals in Linux usin
 - What is a signal
 - What are the 2 signals that cannot be ignored
 
-## Requirements:
+## :heavy_check_mark: Requirements:
 - **All the files will be interpreted on Ubuntu 20.04 LTS 🐧**
-- **Bash script must pass Shellcheck (version 0.7.0) without any error heavy_check_mark**
+- **Bash script must pass Shellcheck (version 0.7.0) without any error ✔️**
 
-## Author
+## :bust_in_silhouette: Author
 [Ahmed Kamal](https://github.com/ahmedmkamal313). 👋
 
-## Files:
+## :file_folder: Files 
 The files in this project are:
 
 - [0-what-is-my-pid]: A script that displays its own PID.
