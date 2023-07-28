@@ -27,8 +27,8 @@ This project is about learning how to manage processes and signals in Linux usin
 ## :file_folder: Files 
 The files in this project are:
 
-- [0-what-is-my-pid]: A script that displays its own PID.
-- 1-list_your_processes: A script that displays a list of currently running processes.
+- [0-what-is-my-pid](https://github.com/ahmedmkamal313/alx-system_engineering-devops/blob/master/0x05-processes_and_signals/0-what-is-my-pid): A script that displays its own PID.
+- [1-list_your_processes](https://github.com/ahmedmkamal313/alx-system_engineering-devops/blob/master/0x05-processes_and_signals/1-list_your_processes): A script that displays a list of currently running processes.
 - [2-show_your_bash_pid]: A script that displays lines containing the word `bash`.
 - [3-show_your_bash_pid_made_easy]: A script that displays the PID and process name of processes whose name contain the word `bash`.
 - [4-to_infinity_and_beyond]: A script that displays `To infinity and beyond` indefinitely.
