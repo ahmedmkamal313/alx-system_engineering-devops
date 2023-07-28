@@ -6,7 +6,7 @@
 # Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
 
 pid=$(pgrep -f "$0")
-echo $pid > /var/run/myscript.pid
+echo "$pid" > /var/run/myscript.pid
 
 trap "echo Y U no love me?!" INT
 trap "echo I hate the kill command" TERM
