@@ -1,0 +1,6 @@
+#!/bin/env bash
+# Display listening ports with PID and program name
+echo "Active Internet connections (only servers)"
+lsof -iTCP -sTCP:LISTEN -P -n
+echo "Active UNIX domain sockets (only servers)"
+lsof -U -P -n
