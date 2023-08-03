@@ -1,6 +1,8 @@
 # 0x08. Networking basics #1 🚀
 This project is about learning the basics of networking, such as localhost, IP address types, netcat, ping, and telnet.
 
+  ![host](https://th.bing.com/th/id/OIP.iYqPhR8DoOxCHIrMjHIY9AHaEK?pid=ImgDet&rs=1)
+
 ## Localhost 🔥
 Localhost is a special hostname that refers to the local computer itself. It is usually represented by the IP address 127.0.0.1 for IPv4 or ::1 for IPv6. Localhost can be used to access local services or test network applications without going through the network. No need to go outside! 😎
 
