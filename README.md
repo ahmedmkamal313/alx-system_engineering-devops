@@ -1,6 +1,9 @@
 # alx-system_engineering-devops
-This repository contains projects related to system engineering and devops.
+![Language: C](https://img.shields.io/badge/Language-C-blue.svg)
+![Language: Shell](https://img.shields.io/badge/Language-Shell-green.svg)
+![Language: Ruby](https://img.shields.io/badge/Language-Ruby-red.svg)
 
+This repository contains projects related to system engineering and devops.
 ## Projects
 - [0x00-shell_basics](https://github.com/ahmedmkamal313/alx-system_engineering-devops/tree/master/0x00-shell_basics): A project that covers the basics of using the shell, such as navigating directories, listing files, creating and deleting files and directories, and using commands and shortcuts.
 - [0x01-shell_permissions](https://github.com/ahmedmkamal313/alx-system_engineering-devops/tree/master/0x01-shell_permissions): A project that covers the concepts of permissions, users and groups, and how to change and manipulate them using commands such as chmod, sudo, su, chown, and chgrp.
