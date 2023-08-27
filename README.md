@@ -14,6 +14,7 @@ This repository contains projects related to system engineering and devops.
 - [0x06-regular_expressions](https://github.com/ahmedmkamal313/alx-system_engineering-devops/tree/master/0x06-regular_expressions): A project that covers the concepts of regular expressions in Ruby, using the Oniguruma library.
 - [0x07-networking_basics](https://github.com/ahmedmkamal313/alx-system_engineering-devops/tree/master/0x07-networking_basics): A project that covers the concepts of networking basics such as OSI model, LANs and WANs, TCP/IP model, IP addresses and subnets.
 - [0x08-networking_basics_2](https://github.com/ahmedmkamal313/alx-system_engineering-devops/tree/master/0x08-networking_basics_2): A project that covers the concepts of networking basics such as localhost and 0.0.0.0 addresses, port numbers and protocols.
+- [0x09-web_infrastructure_design](https://github.com/ahmedmkamal313/alx-system_engineering-devops/tree/master/0x09-web_infrastructure_design): This project is a collection of web infrastructure designs that could be implemented in any web development project. The designs are presented as diagrams that illustrate the components and connections of each web infrastructure.
 - [command_line_for_the_win](https://github.com/ahmedmkamal313/alx-system_engineering-devops/tree/master/command_line_for_the_win): A project that involves completing tasks on the CMD Challenge website.
 ## Usage
 To use this repository, you need to have a Linux distribution installed on your machine. You can clone this repository using the command:
