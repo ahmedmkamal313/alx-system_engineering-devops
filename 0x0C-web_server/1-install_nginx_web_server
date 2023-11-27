@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
-# This script installs nginx web server on web-01 server
+# Installs Nginx with the following configurations:
+#+    Listens on port 80.
+#+    Returns a page containing "Holberton School" when queried
+#++    at the root with a curl GET request.
 
-# Update the package index
-sudo apt-get update
+apt-get update
+apt-get install -y nginx
 
-# Install nginx with -y option to avoid prompts
-sudo apt-get install -y nginx
+mkdir /etc/nginx/html
+touch /etc/nginx/html/index.html
+echo "Hello World!" > /etc/nginx/html/index.html
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /etc/nginx/html;
+     index       index.html index.htm;
+}
+" > /etc/nginx/sites-available/default
 
-# Create a directory named /etc/nginx/html and a file named /etc/nginx/html/index.html with the content "Hello World!"
-sudo mkdir /etc/nginx/html
-echo "Hello World!" | sudo tee /etc/nginx/html/index.html
-
-# Modify the default configuration file of nginx to set the root and index directives to point to the /etc/nginx/html directory and the index.html file
-# Also add the default_server option and the IPv6 address to the listen directive
-sudo sed -i 's#root /var/www/html;#root /etc/nginx/html;#' /etc/nginx/sites-enabled/default
-sudo sed -i 's#index index.html index.htm index.nginx-debian.html;#index index.html;#' /etc/nginx/sites-enabled/default
-sudo sed -i 's#listen 80;#listen 80 default_server;\n\tlisten [::]:80 default_server;#' /etc/nginx/sites-enabled/default
-
-# Restart nginx using service command
-sudo service nginx restart
+service nginx restart
