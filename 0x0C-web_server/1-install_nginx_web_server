@@ -2,18 +2,20 @@
 # This script installs nginx web server on web-01 server
 
 # Update the package index
-sudo apt-get -y update
+sudo apt-get update
 
 # Install nginx with -y option to avoid prompts
-sudo apt-get -y install nginx
+sudo apt-get install -y nginx
 
-# Start nginx using service command
-sudo service nginx start
+# Create a directory named /etc/nginx/html and a file named /etc/nginx/html/index.html with the content "Hello World!"
+sudo mkdir /etc/nginx/html
+echo "Hello World!" | sudo tee /etc/nginx/html/index.html
 
-# Create a file named index.nginx-debian.html
-# in /var/www/html directory with the content "Hello World!"
-echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+# Modify the default configuration file of nginx to set the root and index directives to point to the /etc/nginx/html directory and the index.html file
+# Also add the default_server option and the IPv6 address to the listen directive
+sudo sed -i 's#root /var/www/html;#root /etc/nginx/html;#' /etc/nginx/sites-enabled/default
+sudo sed -i 's#index index.html index.htm index.nginx-debian.html;#index index.html;#' /etc/nginx/sites-enabled/default
+sudo sed -i 's#listen 80;#listen 80 default_server;\n\tlisten [::]:80 default_server;#' /etc/nginx/sites-enabled/default
 
-# Modify the default configuration file of nginx
-# to remove the default_server option from the listen directive
-sed -i "s/listen 80 default_server;/listen 80;/g" /etc/nginx/sites-available/default
+# Restart nginx using service command
+sudo service nginx restart
