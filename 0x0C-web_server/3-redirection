@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script installs nginx web server on web-01 server
+# This script configures a new Ubuntu machine to redirect /redirect_me
 
 # Update the package index
 sudo apt-get update
@@ -8,7 +8,7 @@ sudo apt-get update
 sudo apt-get install -y nginx
 
 # Create a file named redirect_me in /var/www/html directory
-sudo echo "Redirecting..." > /var/www/html/redirect_me
+echo "Redirecting..." | sudo tee /var/www/html/redirect_me > /dev/null
 
 # Modify the default configuration file of Nginx to add a rewrite rule for /redirect_me
 sudo sed -i '/listen 80 default_server;/a \\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-enabled/default
