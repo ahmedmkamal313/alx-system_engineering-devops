@@ -14,5 +14,4 @@ sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/not_found
 sudo sed -i '/listen 80 default_server;/a \\terror_page 404 /not_found;\n\tlocation = /not_found {\n\t\tdefault_type text/html;\n\t}' /etc/nginx/sites-enabled/default
 
 # Reload Nginx service to apply the changes
-sudo service nginx reload
-
+sudo service nginx restart
