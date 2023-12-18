@@ -1,5 +1,5 @@
 # 0x12. Web stack debugging #2
-![cat](https://www.myconfinedspace.com/2014/03/24/99-little-bugs/99-little-bugs-jpg/)
+![cat](https://res.cloudinary.com/edlitera/image/upload/c_fill,f_auto/v1591205159/blog/p0spwccyd2ai4uekjxaj)
 
 This project is about debugging a web stack that runs Nginx as a web server. The main goal is to learn how to run software as another user in Linux and how to configure Nginx to listen on different ports and IPs.
 
