@@ -1,46 +1,22 @@
 #!/usr/bin/python3
 """Returns to-do list information for a given employee ID."""
-
-# Import requests module
 import requests
-# Import sys module to get command line arguments
 import sys
 
-# Get the employee ID from the first argument
-employee_id = sys.argv[1]
+if __name__ == "__main__":
+    # Define the base URL of the API
+    url = "https://jsonplaceholder.typicode.com/"
+    # Get the employee ID from the command-line argument
+    employee_id = sys.argv[1]
+    # Send a GET request to the API to get the user data
+    user = requests.get(url + "users/{}".format(employee_id)).json()
+    # Send another GET request to the API to get the todos data with the employee ID as a parameter
+    todos = requests.get(url + "todos", params={"userId": employee_id}).json()
 
-# Define the API URL
-api_url = "https://jsonplaceholder.typicode.com/todos"
-
-# Make a GET request to the API with the employee ID as a parameter
-response = requests.get(api_url, params={"userId": employee_id})
-
-# Check if the response status code is 200 (OK)
-if response.status_code == 200:
-    # Parse the response as JSON
-    data = response.json()
-
-    # Get the employee name from the first item in the data
-    employee_name = data[0]["user"]["name"]
-
-    # Get the total number of tasks
-    total_tasks = len(data)
-
-    # Get the number of completed tasks
-    completed_tasks = sum(task["completed"] for task in data)
-
-    # Print the first line of the output
-    print(
-            "Employee {} is done with tasks({}/{})"
-            .format(employee_name, completed_tasks, total_tasks)
-            )
-
-    # Loop through the data
-    for task in data:
-        # Check if the task is completed
-        if task["completed"]:
-            # Print the task title with a tabulation and a space before it
-            print("\t {}".format(task["title"]))
-else:
-    # Print an error message if the response status code is not 200
-    print("Error: Unable to get data from the API")
+    # Use a list comprehension to filter the completed tasks and get their titles
+    completed = [t.get("title") for t in todos if t.get("completed") is True]
+    # Print the first line of the output with the employee name, number of completed tasks, and total number of tasks
+    print("Employee {} is done with tasks({}/{}):".format(
+        user.get("name"), len(completed), len(todos)))
+    # Use another list comprehension to print the titles of the completed tasks with a tabulation and a space before each title
+    [print("\t {}".format(c)) for c in completed]
