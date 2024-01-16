@@ -1,40 +1,37 @@
 #!/usr/bin/python3
-"""
-Queries the Reddit API and returns the number of
-subscribers for a given subreddit.
-"""
-
+"""Function to query subscribers on a given Reddit subreddit."""
 import requests
 
-
 def number_of_subscribers(subreddit):
-    """
-    Returns the number of subscribers for a given subreddit.
-
-    Args:
-        subreddit (str): The name of the subreddit.
-
-    Returns:
-        int: The number of subscribers, or 0 if the subreddit is invalid.
-    """
-    # URL for the Reddit API endpoint to get subreddit information
+    """Return the total number of subscribers on a given subreddit."""
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    headers = {
+        "User-Agent": "YourUniqueUserAgent/1.0 by /u/YourRedditUsername"
+    }
+    try:
+        response = requests.get(url, headers=headers, allow_redirects=False)
 
-    # Set a custom User-Agent to avoid Too Many Requests error
-    headers = {'User-Agent': 'my-app/0.0.1'}
+        # Check if the request was successful (status code 200)
+        response.raise_for_status()
 
-    # Send GET request to the Reddit API
-    response = requests.get(url, headers=headers)
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
         # Parse the JSON response and return the number of subscribers
-        data = response.json()
-        return data['data']['subscribers']
-    else:
-        # Return 0 for invalid subreddits or other errors
+        results = response.json().get("data")
+        return results.get("subscribers")
+
+    except requests.exceptions.HTTPError as http_err:
+        # Handle HTTP errors (e.g., 403 Forbidden)
+        print(f"HTTP error occurred: {http_err}")
         return 0
 
+    except requests.exceptions.RequestException as req_err:
+        # Handle other request errors
+        print(f"Request error occurred: {req_err}")
+        return 0
+
+    except Exception as e:
+        # Handle any other unexpected errors
+        print(f"An unexpected error occurred: {e}")
+        return 0
 
 if __name__ == "__main__":
     # Example usage from the command line
@@ -46,3 +43,4 @@ if __name__ == "__main__":
         subreddit = sys.argv[1]
         subscribers = number_of_subscribers(subreddit)
         print(subscribers)
+
