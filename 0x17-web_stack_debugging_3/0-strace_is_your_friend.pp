@@ -5,5 +5,5 @@ class wordpress::fix_wp_settings {
     path  => '/var/www/html/wp-settings.php',
     line  => 'require_once(ABSPATH . \'wp-settings.php\');',
     match => 'phpp',
-  }
+  },
 }
