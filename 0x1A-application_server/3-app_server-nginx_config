@@ -1,9 +1,21 @@
-# Configures Nginx to serve the /number_odd_or_even/ route on AirBnB_clone_v2.
+# /etc/nginx/sites-available/3-app_server-nginx_config
 
+# Remove the default server block that was causing the conflict
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+
+    location / {
+        return 404;
+    }
+}
+
+# Configures Nginx to serve the /number_odd_or_even/ route on AirBnB_clone_v2.
 server {
     # Listen on port 80
-    listen      80 default_server;
-    listen      [::]:80 default_server ipv6only=on;
+    listen      80;
+    listen      [::]:80 ipv6only=on;
 
     # Use server IP as domain name
     server_name 54.160.78.151;
